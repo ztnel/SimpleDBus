@@ -12,5 +12,6 @@ docker build -t "$NAME" -f test/Dockerfile .
 # throw away old build directory to avoid cmake cache conflicts
 echo "Cleaning cmake build artefacts"
 rm -rf build
-echo "Starting simpledbus dev environment"
+echo "Starting simpledbus dev environment."
+echo "Build unittest binaries: 'mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release -DSIMPLEDBUS_COVERAGE=On ../test'"
 docker run --rm -it -v `pwd`:/app -h "$NAME" "$NAME"
